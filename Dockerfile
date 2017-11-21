@@ -1,7 +1,8 @@
 FROM maven:3
 
-RUN git clone https://github.com/devops06/springboot-helloworld.git \
-    && cd springboot-helloworld && mvn install 
+ADD . /java
+WORKDIR /java
+RUN mvn install 
 
 EXPOSE 8080
 
